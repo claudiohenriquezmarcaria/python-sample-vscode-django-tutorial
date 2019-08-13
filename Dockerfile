@@ -7,8 +7,8 @@ FROM tiangolo/uwsgi-nginx:python3.6-alpine3.7
 # portal, navigate to the Applications Settings blade, and create a setting named
 # WEBSITES_PORT with a value that matches the port here (the Azure default is 80).
 # You can also create a setting through the App Service Extension in VS Code.
-ENV LISTEN_PORT=8000
-EXPOSE 8000
+ENV LISTEN_PORT=80
+EXPOSE 80
 
 # Indicate where uwsgi.ini lives
 ENV UWSGI_INI uwsgi.ini
@@ -34,4 +34,4 @@ RUN chmod g+w /app
 RUN chmod g+w /app/db.sqlite3
 
 # Make sure dependencies are installed
-RUN python3 -m pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
